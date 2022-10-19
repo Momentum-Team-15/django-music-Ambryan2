@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+        
+{% block content %} 
+    <h1>{{ user }} Album Directory</h1>
+
+    {% for item in all %}
+        <strong>Album:</strong> {{ item.title }} <br>
+        <strong>Artist:</strong> {{ item.artist }}<br>
+        <strong>Saved:</strong> {{ item.created_at }}
+        <br>
+        <hr>
+    {% endfor %}
+        
+{% endblock %}    
+
