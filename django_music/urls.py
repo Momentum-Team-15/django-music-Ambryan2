@@ -22,4 +22,8 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('__debug__/',include('debug_toolbar.urls')),
     path('', views.index, name='home'),
+    path('albums/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/new/', views.post_new, name='post_new'),
+    path('albums/<int:pk>/edit/', views.post_edit, name='post_edit'),
+
 ]
