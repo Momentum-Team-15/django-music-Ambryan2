@@ -21,8 +21,9 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
+            # this is save an instance of album in database. Commit=False is only needed if we need to add user
             album = form.save(commit=False)
-            album.author = request.user
+            album.user = request.user
             album.created_at = timezone.now()
             album.save()
             return redirect('post_detail', pk=album.pk)
@@ -36,7 +37,7 @@ def post_edit(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             album = form.save(commit=False)
-            album.author = request.user
+            album.user = request.user
             album.created_at = timezone.now()
             album.save()
             return redirect('post_detail', pk=album.pk)
