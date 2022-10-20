@@ -26,7 +26,7 @@ def post_new(request):
             album.user = request.user
             album.created_at = timezone.now()
             album.save()
-            return redirect('post_detail', pk=album.pk)
+            return redirect('home') #, pk=album.pk)
     else:
         form = PostForm()
     return render(request, 'albums/post_edit.html', {'form': form})
