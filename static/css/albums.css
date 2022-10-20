@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    flex-flow: column;
+    background-color: darkblue;
+    padding-left: 25px;
+}
+
+h1 {
+    color: lightblue;
+}
+header p a {
+    color: lightblue;
+}
+h2 a {
+    padding-left: 25px;
+}
+
+h3 a {
+    color: lightseagreen;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    background-color: beige;
+    width: 50%;
+    margin: auto;
+}

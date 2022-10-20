@@ -1,16 +1,12 @@
 {% extends 'base.html' %}
         
 {% block content %} 
-    <h1>{{ user }} Album Directory</h1>
     <h2><a href="{% url 'post_new' %}">Add Album +</a></h2>
-    {% for album in albums %}
-        <h3><a href="{% url 'post_detail' pk=album.pk %}">{{ album }}</a></h3>
-        <!-- <strong>Album:</strong> {{ album.title }} <br>
-        <strong>Artist:</strong> {{ album.artist }}<br>
-        <strong>Saved:</strong> {{ album.created_at }} -->
-        <br>
-        <hr>
-    {% endfor %}
-        
+    <div class="container">
+        {% for album in albums %}
+            <h3><a href="{% url 'post_detail' pk=album.pk %}">{{ album }}</a></h3>
+            <br>
+        {% endfor %}
+    </div>    
 {% endblock %}    
 

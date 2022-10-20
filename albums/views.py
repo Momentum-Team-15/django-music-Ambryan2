@@ -1,13 +1,15 @@
+from re import A
 from django.shortcuts import render, get_object_or_404
 from .models import User, Album, Artist
 from .forms import PostForm
 from django.shortcuts import redirect
 from django.utils import timezone
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
 def index(request):
     all_albums = Album.objects.all()
-    person = Album.objects.get(pk=1)
+    person = User.objects.get(pk=1)
     # be able to filter by user id in objects
     return render(request, 'albums/index.html', {'albums': all_albums,'user': person})
 
@@ -41,4 +43,17 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'albums/post_edit.html', {'form': form})
+
+def album_delete(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    # fetch the object related to passed id
+    obj = get_object_or_404(Album, pk = pk)
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return HttpResponseRedirect("/")
+    return render(request, "albums/album_delete.html", {})
+    
 

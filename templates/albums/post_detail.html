@@ -5,4 +5,5 @@
     <strong>Artist:</strong> {{ album.artist }}<br>
     <strong>Saved:</strong> {{ album.created_at }} <br>
     <p><a href="{% url 'post_edit' pk=album.pk %}">Edit post</a></p>
+    <p><a href="{% url 'album_delete' pk=album.pk %}">Delete Album</a></p>
 {% endblock %}
