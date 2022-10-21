@@ -14,6 +14,7 @@ class Album(models.Model):
     artist =  models.ForeignKey('Artist', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    favorite = models.BooleanField(null=True)
 
     def __str__(self):
         return f"{self.title} by {self.artist}"

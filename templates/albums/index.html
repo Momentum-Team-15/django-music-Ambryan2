@@ -4,9 +4,15 @@
     <h2><a href="{% url 'post_new' %}">Add Album +</a></h2>
     <div class="container">
         {% for album in albums %}
-            <h3><a href="{% url 'post_detail' pk=album.pk %}">{{ album }}</a></h3>
+            <div class="display">
+            <h3 class="albumDisplay"><a href="{% url 'post_detail' pk=album.pk %}">{{ album.title }}</a> by {{ album.artist }}</h3>
+            {% if album.favorite == True %}
+                <p>⭐️</p>
+            {% endif %}
+            </div>
             <br>
         {% endfor %}
+        
     </div>    
 {% endblock %}    
 

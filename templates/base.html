@@ -11,7 +11,10 @@
 <body>
     <header>
         <h1>{{ user }} Album Directory</h1>
-        <p><a href="{% url 'home' %}">Home</a></p>
+        <div class="navigation">
+            <p class="navlink"><a href="{% url 'home' %}">Home</a></p>
+            <p class="navlink"><a href="{% url 'artist' %}">Artist</a></p>
+        </div>
     </header>
     {% block content %} {% endblock %}
 </body>

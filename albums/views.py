@@ -13,6 +13,10 @@ def index(request):
     # be able to filter by user id in objects
     return render(request, 'albums/index.html', {'albums': all_albums,'user': person})
 
+def artist_shown(request):
+    artist = Artist.objects.all()
+    return render(request, 'albums/artist.html',{'artists':artist})
+
 def post_detail(request, pk):
     post = get_object_or_404(Album, pk=pk)
     return render(request, 'albums/post_detail.html', {'album': post})
