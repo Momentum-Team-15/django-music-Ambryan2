@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<div class="container">
 {% for artist in artists %}
-    {{ artist }}
+    <div class="display">
+    <p><a href="{% url 'artist_detail' pk=artist.pk %}">{{ artist }}</a></p>
+    </div>
+    <br>
 {% endfor %}
+</div>
 
 {% endblock %}

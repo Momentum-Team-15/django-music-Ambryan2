@@ -5,7 +5,7 @@
     <div class="container">
         {% for album in albums %}
             <div class="display">
-            <h3 class="albumDisplay"><a href="{% url 'post_detail' pk=album.pk %}">{{ album.title }}</a> by {{ album.artist }}</h3>
+            <h3 class="albumDisplay"><a href="{% url 'post_detail' pk=album.pk %}">{{ album.title }}</a> by <a href="{% url 'artist_detail' pk=album.artist.pk %}">{{ album.artist }}</a></h3>
             {% if album.favorite == True %}
                 <p>⭐️</p>
             {% endif %}

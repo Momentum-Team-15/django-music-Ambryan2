@@ -21,6 +21,11 @@ def post_detail(request, pk):
     post = get_object_or_404(Album, pk=pk)
     return render(request, 'albums/post_detail.html', {'album': post})
 
+def artist_detail(request, pk):
+    artist = get_object_or_404(Artist, pk=pk)
+    artist_album = Album.objects.filter(artist=pk)
+    return render(request,'albums/artist_detail.html', {'artist':artist, 'artist_album':artist_album})
+
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)

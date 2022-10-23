@@ -27,4 +27,5 @@ urlpatterns = [
     path('albums/<int:pk>/edit', views.post_edit, name='post_edit'),
     path('albums/<int:pk>/delete', views.album_delete, name='album_delete' ),
     path('artist', views.artist_shown, name='artist'),
+    path('artist/<int:pk>', views.artist_detail, name='artist_detail'),
 ]
