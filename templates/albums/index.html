@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+        
+{% block content %} 
+    <h2><a href="{% url 'post_new' %}">Add Album +</a></h2>
+    <div class="container">
+        {% for album in albums %}
+            <div class="display">
+            <h3 class="albumDisplay"><a href="{% url 'post_detail' pk=album.pk %}">{{ album.title }}</a> by <a href="{% url 'artist_detail' pk=album.artist.pk %}">{{ album.artist }}</a></h3>
+            {% if album.favorite == True %}
+                <p>⭐️</p>
+            {% endif %}
+            </div>
+            <br>
+        {% endfor %}
+        
+    </div>    
+{% endblock %}    
+

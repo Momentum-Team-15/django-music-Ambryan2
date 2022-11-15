@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    flex-flow: column;
+    background-color:darkblue;
+    padding-left: 25px;
+}
+
+h1 {
+    color: lightblue;
+}
+.navigation{
+    display: flex;
+    flex-flow: row;
+    margin-bottom: 5px;
+}
+.navlink{
+    margin: 0px 5px;
+    font-size: 20px;
+}
+
+header p a {
+    color: lightblue;
+}
+h2 a {
+    padding-left: 25px;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    width: 50%;
+    margin: auto;
+}
+.display{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background-color: beige;
+    width: 100%
+}
+.albumDisplay{
+    color: black;
+}
+
